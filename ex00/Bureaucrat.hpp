@@ -6,7 +6,7 @@
 /*   By: akajjou <akajjou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 01:40:38 by akajjou           #+#    #+#             */
-/*   Updated: 2025/02/24 17:46:09 by akajjou          ###   ########.fr       */
+/*   Updated: 2025/03/01 16:46:54 by akajjou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,15 @@ class Bureaucrat
         Bureaucrat(const Bureaucrat& original);
         Bureaucrat& operator=(const Bureaucrat &original);
         ~Bureaucrat();
+    // increment and decrement
+        void    BureaucratIncrement();
+        void    BureaucratDecrement();
     // Getter
         std::string getName();
         int         getGrade();
+    // exeption 
 };
 
+std::ostream	&operator<<(std::ostream &o, Bureaucrat *a);
 
 # endif

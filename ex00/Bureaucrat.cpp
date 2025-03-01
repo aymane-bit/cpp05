@@ -1,4 +1,4 @@
-/* ************************************************************************** */
+ /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
@@ -11,6 +11,13 @@
 /* ************************************************************************** */
 
 # include "Bureaucrat.hpp"
+
+// Destructor
+
+Bureaucrat::~Bureaucrat()
+{
+    std::cout << "Bureaucrat destructor is called\n";
+}
 
 Bureaucrat::Bureaucrat() : name("MaxWeber")
 {
@@ -35,10 +42,10 @@ Bureaucrat::Bureaucrat(int set_grade) : name("MaxWeber")
 {
     std::cout << "Bureaucrat constructor called with the default name MaxWeber\n";
     grade = set_grade;
-    if (getGrade() < 1)
-        throw GradeTooHighException();
-    if (getGrade() > 150)
-        throw GradeTooLowException();
+    // if (getGrade() < 1)
+    //     throw GradeTooHighException();
+    // if (getGrade() > 150)
+    //     throw GradeTooLowException();
 
 }
 Bureaucrat::Bureaucrat(std::string _name) : name(_name)
@@ -49,12 +56,15 @@ Bureaucrat::Bureaucrat(std::string _name) : name(_name)
 Bureaucrat::Bureaucrat(std::string _name, int set_grade) : name(_name)
 {
     std::cout << "Bureaucrat with the name "<< getName()  <<  " constructor called\n";
-    if (getGrade() < 1)
-        throw GradeTooHighException();
-    if (getGrade() > 150)
-        throw GradeTooLowException();
+    grade = set_grade;
+    // if (getGrade() < 1)
+    //     throw GradeTooHighException();
+    // if (getGrade() > 150)
+    //     throw GradeTooLowException();
 }
+
 // getter and setter
+
 
 std::string  Bureaucrat::getName()
 {
@@ -64,4 +74,24 @@ std::string  Bureaucrat::getName()
 int Bureaucrat::getGrade()
 {
     return (grade);
+}
+// increment & decrement
+
+void   Bureaucrat::BureaucratIncrement()
+{
+    if (grade == 1)
+        throw 
+    grade--;
+}
+
+void   Bureaucrat::BureaucratDecrement()
+{
+    grade++;
+}
+// op overload <<
+
+std::ostream	&operator<<(std::ostream &o, Bureaucrat *a)
+{
+	o << "Bureaucrat " << a->getName() << ":\n\tgrade: " << a->getGrade() << std::endl;
+	return (o);
 }
