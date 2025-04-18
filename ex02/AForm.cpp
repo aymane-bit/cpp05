@@ -1,48 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Form.cpp                                           :+:      :+:    :+:   */
+/*   AForm.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: akajjou <akajjou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 16:02:28 by akajjou           #+#    #+#             */
-/*   Updated: 2025/04/17 18:44:37 by akajjou          ###   ########.fr       */
+/*   Updated: 2025/04/17 18:45:01 by akajjou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "Form.hpp"
+# include "AForm.hpp"
 
 // C.O.F
 
-Form::~Form()
+AForm::~AForm()
 {
-    std::cout << "Destructor for the Form " << getName() << " is called\n";
+    std::cout << "Destructor for the AForm " << getName() << " is called\n";
 }
 
-Form::Form() : name("DefaultForm") , sign_grade(50) , execute_grade(50)
+AForm::AForm() : name("DefaultAForm") , sign_grade(50) , execute_grade(50)
 {   
-    std::cout << "Form default constructor called\n";
+    std::cout << "AForm default constructor called\n";
     is_signed = false;
 }
 
-Form::Form(std::string _name, int set_sgrade, int set_egrade)  : name(_name) , sign_grade(set_sgrade) , execute_grade(set_egrade)
+AForm::AForm(std::string _name, int set_sgrade, int set_egrade)  : name(_name) , sign_grade(set_sgrade) , execute_grade(set_egrade)
 {
     is_signed = false;
     if (set_sgrade < 1 || set_egrade < 1)
         throw GradeTooHighException();
     if (set_sgrade > 150 || set_egrade > 150)
         throw GradeTooLowException();
-    std::cout << "the Form with the name: " << getName() << " and the sign grade of " << getSgrade()
+    std::cout << "the AForm with the name: " << getName() << " and the sign grade of " << getSgrade()
     << " and the execute grade of " << getEgrade() << " constuctor is called\n";
 }
 
-Form::Form(const Form& original) : name(original.name) , sign_grade(original.sign_grade) , execute_grade(original.execute_grade)
+AForm::AForm(const AForm& original) : name(original.name) , sign_grade(original.sign_grade) , execute_grade(original.execute_grade)
 {
-    std::cout << "Form copy constructor called\n";
+    std::cout << "AForm copy constructor called\n";
     is_signed = original.is_signed;
 }
 
-Form& Form::operator=(const Form &original)
+AForm& AForm::operator=(const AForm &original)
 {
     if (this != &original)
         is_signed = original.is_signed;
@@ -51,7 +51,7 @@ Form& Form::operator=(const Form &original)
 
 // mm fct
 
-void    Form::beSigned(Bureaucrat &bureaucrat)
+void    AForm::beSigned(Bureaucrat &bureaucrat)
 {
     if (bureaucrat.getGrade() <= getSgrade())
         is_signed = true;
@@ -59,43 +59,48 @@ void    Form::beSigned(Bureaucrat &bureaucrat)
     throw GradeTooLowException();    
 }
 
+void AForm::execute(Bureaucrat const & executor) const
+{
+    
+}   
+
 // getter
 
-std::string     Form::getName()
+std::string     AForm::getName()
 {
     return name;
 }
 
-int     Form::getSgrade()
+int     AForm::getSgrade() const
 {
     return sign_grade;
 }
 
-int     Form::getEgrade()
+int     AForm::getEgrade()
 {
     return execute_grade;
 }
 
-bool    Form::getBool()
+bool    AForm::getBool() const
 {
     return is_signed;
 }
 
 // what ov
-const char *Form::GradeTooHighException::what(void) const throw()
+const char *AForm::GradeTooHighException::what(void) const throw()
 {
-	return ("Form::Grades too HIGH");
+	return ("AForm::Grades too HIGH");
 };
 
-const char *Form::GradeTooLowException::what(void) const throw()
+const char *AForm::GradeTooLowException::what(void) const throw()
 {
-	return ("Form::Grades too LOW");
+	return ("AForm::Grades too LOW");
 };
 
 // << 
-std::ostream	&operator<<(std::ostream &o, Form &a)
+std::ostream	&operator<<(std::ostream &o, AForm &a)
 {
-	o << "The Form by the name " << a.getName() << " and the sign grade of " << a.getSgrade()
+	o << "The AForm by the name " << a.getName() << " and the sign grade of " << a.getSgrade()
     << " and the execute grade of " << a.getEgrade();
     if (a.getBool() == true)
         o << " is signed\n";

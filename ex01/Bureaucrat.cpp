@@ -115,15 +115,12 @@ const char *Bureaucrat::GradeTooLowException::what(void) const throw()
 
 void    Bureaucrat::signForm(Form &form)
 {
-    try
+    if (form.getBool() == true)
     {
-        form.beSigned(*this);
+        std::cout << "The Form " << form.getName() << " Is Signed By the Bureaucrat " << this->getName() << std::endl;
     }
-    catch(const std::exception& e)
+    else
     {
-        std::cout << "Bureaucrat couldn't sign the form : " << form.getName() << ", Because "
-        << e.what() << std::endl;
-        return;
+        std::cout << "The Form " << form.getName() << "Is NOT Signed By the Bureaucrat " << this->getName() << "Because of the grade\n"; 
     }
-    std::cout << "The Bureaucrat " << getName() << ", Signed the form " << form.getName() << std::endl; 
 }

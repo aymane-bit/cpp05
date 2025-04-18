@@ -6,7 +6,7 @@
 /*   By: akajjou <akajjou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 19:43:08 by akajjou           #+#    #+#             */
-/*   Updated: 2025/03/04 14:53:02 by akajjou          ###   ########.fr       */
+/*   Updated: 2025/04/14 15:59:14 by akajjou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int main()
 {
 	{
-		std::cout << "                  Testing with high grade ( < 1) \n";
+		std::cout << "\n------------------> Testing with high grade ( < 1) <------------------\n\n";
 		Bureaucrat aymane("Aymane", 1);
 		try
 		{
@@ -27,7 +27,7 @@ int main()
 		}
 	}
 	{
-		std::cout << "                  Testing with low grade ( > 150) \n";
+		std::cout << "\n------------------> Testing with low grade ( > 150) <------------------\n\n";
 		Bureaucrat aymane("Aymane", 150);
 		try
 		{
@@ -39,7 +39,7 @@ int main()
 		}
 	}
 	{
-		std::cout << "                  Testing constructing using invalid grade\n";
+		std::cout << "\n------------------> Testing constructing using invalid grade ------------------\n\n";
 		try
 		{
 			Bureaucrat aymane("aymane" , 195);
@@ -50,7 +50,7 @@ int main()
 		}
 	}
 	{
-		std::cout << "                  Testing the insertion («) operator\n";
+		std::cout << "\n------------------> Testing the insertion («) operator ------------------\n\n";
 		Bureaucrat aymane("Aymane", 50);
 		std::cout << aymane;
 	}

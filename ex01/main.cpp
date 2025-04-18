@@ -6,7 +6,7 @@
 /*   By: akajjou <akajjou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 19:43:08 by akajjou           #+#    #+#             */
-/*   Updated: 2025/03/06 18:24:34 by akajjou          ###   ########.fr       */
+/*   Updated: 2025/04/17 00:34:15 by akajjou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,14 @@
 int main()
 {
 	{
-		std::cout << "                                 Testing the Form exception :\n";
+		std::cout << "\n---------------------------> Testing the Form exception : <---------------------------\n\n";
 		try
 		{
-			Form aymane("work", 50, 500);
+			Bureaucrat allal("allal" , 100);
+			Form aymane("work", 100, 100);
+			aymane.beSigned(allal);
+			allal.signForm(aymane);
+			std::cout << aymane;
 		}
 		catch(const std::exception& e)
 		{

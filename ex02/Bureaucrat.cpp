@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 # include "Bureaucrat.hpp"
+# include "AForm.hpp"
 
 // Destructor
 
@@ -66,6 +67,7 @@ Bureaucrat::Bureaucrat(std::string _name, int set_grade) : name(_name)
 }
 
 // getter and setter
+
 std::string  Bureaucrat::getName()
 {
     return (name);
@@ -102,10 +104,23 @@ std::ostream	&operator<<(std::ostream &o, Bureaucrat &a)
 
 const char *Bureaucrat::GradeTooHighException::what(void) const throw()
 {
-	return ("Grade too HIGH");
+	return ("Bureaucrat::Grade too HIGH");
 };
 
 const char *Bureaucrat::GradeTooLowException::what(void) const throw()
 {
-	return ("Grade too LOW");
+	return ("Bureaucrat::Grade too LOW");
 };
+// mm fct
+
+void    Bureaucrat::signForm(AForm &form)
+{
+    if (form.getBool() == true)
+    {
+        std::cout << "The Form " << form.getName() << " Is Signed By the Bureaucrat " << this->getName() << std::endl;
+    }
+    else
+    {
+        std::cout << "The Form " << form.getName() << "Is NOT Signed By the Bureaucrat " << this->getName() << "Because of the grade\n"; 
+    }
+}
