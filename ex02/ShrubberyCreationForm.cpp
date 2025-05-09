@@ -6,7 +6,7 @@
 /*   By: akajjou <akajjou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 17:41:25 by akajjou           #+#    #+#             */
-/*   Updated: 2025/04/17 19:22:31 by akajjou          ###   ########.fr       */
+/*   Updated: 2025/05/09 23:17:45 by akajjou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,10 @@ ShrubberyCreationForm::~ShrubberyCreationForm()
     std::cout << "ShrubberyCreationForm destructor is called for " << _target << std::endl;
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(std::string name)
+ShrubberyCreationForm::ShrubberyCreationForm(std::string name) : AForm("ShrubberyCreationForm", 145, 137)
 {
     _target = name;
+    
     std::cout << "ShrubberyCreationForm constructor is called for the target " << _target << std::endl;    
 }
 
@@ -45,8 +46,29 @@ ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationF
 
 //mm fct
 
-void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
+void ShrubberyCreationForm::execute(Bureaucrat const &executor) const 
 {
-    if (!getBool())
-        throw AForm::GradeTooHighException();
+    if (getBool() == false)
+        throw AForm::FormNotSigned();
+    if (executor.getGrade() > this->getEgrade())
+        throw Bureaucrat::GradeTooLowException();
+    std::string     filename = _target + "_shrubbery";
+    std::ofstream   outFile(filename.c_str());
+    
+    outFile << "        *\n";
+    outFile << "       ***\n";
+    outFile << "      *****\n";
+    outFile << "     *******\n";
+    outFile << "    *********\n";
+    outFile << "   ***********\n";
+    outFile << "  *************\n";
+    outFile << " ***************\n";
+    outFile << "*****************\n";
+    outFile << "       |||\n";
+    outFile << "       |||\n";
+    outFile << "     __|||__\n";
+    outFile << "    |       |\n";
+    outFile << "    |_______|\n";
+
+    outFile.close();
 }

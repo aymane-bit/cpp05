@@ -73,7 +73,7 @@ std::string  Bureaucrat::getName()
     return (name);
 }
 
-int Bureaucrat::getGrade()
+int Bureaucrat::getGrade() const
 {
     return (grade);
 }
@@ -121,6 +121,6 @@ void    Bureaucrat::signForm(AForm &form)
     }
     else
     {
-        std::cout << "The Form " << form.getName() << "Is NOT Signed By the Bureaucrat " << this->getName() << "Because of the grade\n"; 
+        std::cout << "The Form " << form.getName() << "Is NOT Signed By the Bureaucrat " << this->getName() << " Because of the grade\n"; 
     }
 }

@@ -6,7 +6,7 @@
 /*   By: akajjou <akajjou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 16:21:47 by akajjou           #+#    #+#             */
-/*   Updated: 2025/04/17 19:22:07 by akajjou          ###   ########.fr       */
+/*   Updated: 2025/05/09 22:31:12 by akajjou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ class ShrubberyCreationForm : public AForm
         ~ShrubberyCreationForm();
         ShrubberyCreationForm& operator=(const ShrubberyCreationForm &original);
     // mm fct
-        void execute(Bureaucrat const &executor) const override;
+        void execute(Bureaucrat const &executor) const;
 };
 
 

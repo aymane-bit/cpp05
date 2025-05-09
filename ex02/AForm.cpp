@@ -6,7 +6,7 @@
 /*   By: akajjou <akajjou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 16:02:28 by akajjou           #+#    #+#             */
-/*   Updated: 2025/04/17 18:45:01 by akajjou          ###   ########.fr       */
+/*   Updated: 2025/05/09 23:01:23 by akajjou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,34 +56,34 @@ void    AForm::beSigned(Bureaucrat &bureaucrat)
     if (bureaucrat.getGrade() <= getSgrade())
         is_signed = true;
     else
-    throw GradeTooLowException();    
+    throw GradeTooLowException();
 }
 
-void AForm::execute(Bureaucrat const & executor) const
-{
+// void AForm::execute(Bureaucrat const & executor) const
+// {
     
-}   
+// }   
 
 // getter
 
 std::string     AForm::getName()
 {
-    return name;
+    return (name);
 }
 
 int     AForm::getSgrade() const
 {
-    return sign_grade;
+    return (sign_grade);
 }
 
-int     AForm::getEgrade()
+int     AForm::getEgrade() const
 {
-    return execute_grade;
+    return (execute_grade);
 }
 
 bool    AForm::getBool() const
 {
-    return is_signed;
+    return (is_signed);
 }
 
 // what ov
@@ -95,6 +95,11 @@ const char *AForm::GradeTooHighException::what(void) const throw()
 const char *AForm::GradeTooLowException::what(void) const throw()
 {
 	return ("AForm::Grades too LOW");
+};
+
+const char *AForm::FormNotSigned::what(void) const throw()
+{
+	return ("AForm::This Form Is Not Signed");
 };
 
 // << 

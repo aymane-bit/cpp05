@@ -6,7 +6,7 @@
 /*   By: akajjou <akajjou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 01:40:38 by akajjou           #+#    #+#             */
-/*   Updated: 2025/03/06 17:50:22 by akajjou          ###   ########.fr       */
+/*   Updated: 2025/05/09 22:59:43 by akajjou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ class Bureaucrat
         void    BureaucratDecrement();
     // Getter
         std::string getName();
-        int         getGrade();
+        int         getGrade() const;
     // exeption class
     class GradeTooHighException : public std::exception
     {
