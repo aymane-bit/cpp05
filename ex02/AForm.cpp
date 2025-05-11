@@ -6,7 +6,7 @@
 /*   By: akajjou <akajjou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 16:02:28 by akajjou           #+#    #+#             */
-/*   Updated: 2025/05/09 23:01:23 by akajjou          ###   ########.fr       */
+/*   Updated: 2025/05/10 22:56:56 by akajjou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ void    AForm::beSigned(Bureaucrat &bureaucrat)
     if (bureaucrat.getGrade() <= getSgrade())
         is_signed = true;
     else
-    throw GradeTooLowException();
+       throw GradeTooLowException();
 }
 
 // void AForm::execute(Bureaucrat const & executor) const
