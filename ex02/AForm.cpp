@@ -6,7 +6,7 @@
 /*   By: akajjou <akajjou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 16:02:28 by akajjou           #+#    #+#             */
-/*   Updated: 2025/05/10 22:56:56 by akajjou          ###   ########.fr       */
+/*   Updated: 2025/05/11 18:00:17 by akajjou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ void    AForm::beSigned(Bureaucrat &bureaucrat)
 
 // getter
 
-std::string     AForm::getName()
+std::string     AForm::getName() const
 {
     return (name);
 }

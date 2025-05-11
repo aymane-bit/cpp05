@@ -68,7 +68,7 @@ Bureaucrat::Bureaucrat(std::string _name, int set_grade) : name(_name)
 
 // getter and setter
 
-std::string  Bureaucrat::getName()
+std::string  Bureaucrat::getName() const
 {
     return (name);
 }
@@ -116,11 +116,22 @@ const char *Bureaucrat::GradeTooLowException::what(void) const throw()
 void    Bureaucrat::signForm(AForm &form)
 {
     if (form.getBool() == true)
-    {
         std::cout << "The Form " << form.getName() << " Is Signed By the Bureaucrat " << this->getName() << std::endl;
-    }
     else
+        std::cout << "The Form " << form.getName() << "Is NOT Signed By the Bureaucrat " << this->getName() << " Because of the grade\n";
+}
+
+void Bureaucrat::executeForm(AForm const &AForm) const
+{
+    try 
     {
-        std::cout << "The Form " << form.getName() << "Is NOT Signed By the Bureaucrat " << this->getName() << " Because of the grade\n"; 
+        AForm.execute(*this);
+        std::cout << this->getName() << " executed " << AForm.getName() << std::endl;
+    } 
+    catch (std::exception &e)
+    {
+        std::cout << this->getName() << " couldn't execute " << AForm.getName()
+                  << " because " << e.what() << std::endl;
     }
 }
+

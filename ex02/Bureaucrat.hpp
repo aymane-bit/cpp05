@@ -6,7 +6,7 @@
 /*   By: akajjou <akajjou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 01:40:38 by akajjou           #+#    #+#             */
-/*   Updated: 2025/05/09 22:59:43 by akajjou          ###   ########.fr       */
+/*   Updated: 2025/05/11 18:01:01 by akajjou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,11 +36,12 @@ class Bureaucrat
         ~Bureaucrat();
     // mm fct
         void    signForm(AForm &Aform);
+        void    executeForm(AForm const &form) const;
     // increment and decrement
         void    BureaucratIncrement();
         void    BureaucratDecrement();
     // Getter
-        std::string getName();
+        std::string getName()  const;
         int         getGrade() const;
     // exeption class
     class GradeTooHighException : public std::exception

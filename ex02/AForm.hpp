@@ -6,7 +6,7 @@
 /*   By: akajjou <akajjou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 14:55:19 by akajjou           #+#    #+#             */
-/*   Updated: 2025/05/09 23:01:32 by akajjou          ###   ########.fr       */
+/*   Updated: 2025/05/11 22:59:28 by akajjou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ class AForm
         void                beSigned(Bureaucrat &original);
         virtual void        execute(Bureaucrat const & executor) const = 0;
     // getter 
-        std::string         getName();
+        std::string         getName() const;
         virtual int         getSgrade() const;
         int                 getEgrade() const;
         bool                getBool() const;
