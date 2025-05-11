@@ -1,14 +1,16 @@
 CXX = c++
 
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -g
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 TARGET = Bureaucrat
+
+Header = Bureaucrat.hpp
 
 SRC = main.cpp Bureaucrat.cpp
 
 all: $(TARGET)
 
-$(TARGET): $(SRC)
+$(TARGET): $(SRC) $(Header)
 	$(CXX) $(CXXFLAGS) -o $(TARGET) $(SRC)
 
 clean:

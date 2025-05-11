@@ -4,11 +4,13 @@ CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 TARGET = Form
 
-SRC = main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp # PresidentialPardonForm.cpp  
+Header = Bureaucrat.hpp AForm.hpp ShrubberyCreationForm.hpp RobotomyRequestForm.hpp PresidentialPardonForm.hpp
+
+SRC = main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp  
 
 all: $(TARGET)
 
-$(TARGET): $(SRC)
+$(TARGET): $(SRC) $(Header)
 	$(CXX) $(CXXFLAGS) -o $(TARGET) $(SRC)
 
 clean:

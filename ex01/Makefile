@@ -4,11 +4,13 @@ CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 TARGET = Form
 
+Header = Bureaucrat.hpp Form.hpp
+
 SRC = main.cpp Bureaucrat.cpp Form.cpp
 
 all: $(TARGET)
 
-$(TARGET): $(SRC)
+$(TARGET): $(SRC) $(Header)
 	$(CXX) $(CXXFLAGS) -o $(TARGET) $(SRC)
 
 clean:
