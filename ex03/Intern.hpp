@@ -6,7 +6,7 @@
 /*   By: akajjou <akajjou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 02:20:18 by akajjou           #+#    #+#             */
-/*   Updated: 2025/05/12 02:39:29 by akajjou          ###   ########.fr       */
+/*   Updated: 2025/05/14 03:53:43 by akajjou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 #include "Bureaucrat.hpp"
 #include "AForm.hpp" 
-
+#include <iostream>
 
 class Bureaucrat;
 
@@ -29,7 +29,6 @@ class Intern : public Bureaucrat
         ~Intern();
     // mm fct
         AForm* makeForm(std::string FormName, std::string FormTarget);
-    
 };
 
 #endif

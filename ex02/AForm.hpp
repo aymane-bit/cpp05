@@ -6,7 +6,7 @@
 /*   By: akajjou <akajjou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 14:55:19 by akajjou           #+#    #+#             */
-/*   Updated: 2025/05/11 23:41:21 by akajjou          ###   ########.fr       */
+/*   Updated: 2025/05/14 03:33:31 by akajjou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 # define AFORM_HPP
 
 # include <iostream>
+# include <exception>
+# include <streambuf>
 # include "Bureaucrat.hpp"
 
 class Bureaucrat;

@@ -14,7 +14,7 @@ $(TARGET): $(SRC) $(Header)
 	$(CXX) $(CXXFLAGS) -o $(TARGET) $(SRC)
 
 clean:
-	rm -f $(TARGET) Garden_shrubbery
+	rm -f $(TARGET)
 
 fclean: clean
 	rm -f $(TARGET)
